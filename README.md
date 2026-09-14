@@ -4,7 +4,7 @@ A responsive static HTML/CSS/JavaScript website with a filterable inspiration ga
 
 ## Business setup
 
-Edit `business-config.js` to set `whatsappNumber` (international digits only, no + or spaces) and `serviceArea`. Both intentionally start blank. No enquiry is sent or stored by the site. Customers review and send the prepared message in WhatsApp. Verify the number before public release.
+Edit `business-config.js` to set `whatsappNumber` (international digits only, no + or spaces) and `serviceArea`. The configured WhatsApp number is +27 79 470 1191; the service area remains blank. No enquiry is sent or stored by the site. Customers review and send the prepared message in WhatsApp. Verify the number before public release.
 
 ## Local work
 

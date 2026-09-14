@@ -28,7 +28,7 @@ test('navigation targets exist and business claims are not fabricated', () => {
   const { doc } = setup();
   for (const a of doc.querySelectorAll('a[href^="#"]')) assert.ok(doc.querySelector(a.getAttribute('href')), a.href);
   assert.doesNotMatch(html, /2,400|4\.9\/5|Licensed &amp; insured|Amanda R\.|\(555\)/);
-  assert.equal(business.whatsappNumber, '');
+  assert.ok(validNumber(business.whatsappNumber));
 });
 test('all gallery filters and single-image navigation', () => {
   const { doc } = setup(); initGallery(doc, galleryItems);
@@ -84,14 +84,14 @@ test('WhatsApp validates missing data and safely encodes complete enquiries', ()
   assert.match(url.searchParams.get('text'), /Zoë & Sam/); assert.match(url.searchParams.get('text'), /40 m²/);
 });
 test('missing-number UI does not fake success; configured contact enables form', () => {
-  const { dom, doc } = setup(); initQuote(doc, business);
+  const { dom, doc } = setup(); initQuote(doc, { ...business, whatsappNumber: '' });
   assert.equal(doc.querySelector('#quote-form button').disabled, true);
   doc.querySelector('#quote-form').dispatchEvent(new dom.window.Event('submit', { cancelable: true }));
   assert.match(doc.querySelector('#quote-status').textContent, /not yet available/);
   assert.equal(doc.querySelector('#direct-whatsapp').hidden, true);
-  const enabled = setup(); initQuote(enabled.doc, { ...business, whatsappNumber: '27821234567', serviceArea: 'Cape Town' });
+  const enabled = setup(); initQuote(enabled.doc, { ...business, serviceArea: 'Cape Town' });
   assert.equal(enabled.doc.querySelector('#quote-form button').disabled, false);
-  assert.equal(enabled.doc.querySelector('#direct-whatsapp').href, 'https://wa.me/27821234567');
+  assert.equal(enabled.doc.querySelector('#direct-whatsapp').href, 'https://wa.me/27794701191');
   assert.match(enabled.doc.querySelector('#service-area').textContent, /Cape Town/);
   enabled.doc.querySelector('[data-service="Gamazine"]').click(); assert.equal(enabled.doc.querySelector('select').value, 'Gamazine');
   assert.equal(enabled.doc.querySelector('#quote-form').checkValidity(), false);
