@@ -1,0 +1,25 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "name": "interior-gamazine-gold",
+      "prompt": "Create a NEW premium architectural photograph of an INTERIOR WALL finished in warm sandy-gold Gamazine-style decorative coating, using the attached example only as reference for the coating. The wall must show unmistakable dense irregular dragged and curled mineral aggregate ridges, the same pronounced rough textured finish seen on the reference walls. NOT normal smooth wall paint, not subtle roller texture, not marble or smooth plaster. Close oblique architectural view of a wide wall and its interior corner, with a sliver of adjoining ivory textured wall and crisp white skirting at bottom to show scale. Textured wall fills 90% of image. Soft raking natural daylight reveals depth of every raised grain and swirl. High-end, clean professional workmanship and refined warm colour. No furniture, plants, books, art, decor, people or paint cans. Landscape 1536x1024, photorealistic architectural editorial photography, single image, no words or watermarks.",
+      "reference": "/Users/staytru/Downloads/Paints/3images (17).jpeg",
+      "original": "assets/source/interior-gamazine-gold-original.png",
+      "outputs": [
+        "public/images/interior-gamazine-gold-800.webp",
+        "public/images/interior-gamazine-gold-1536.webp"
+      ]
+    },
+    {
+      "name": "interior-glamour-pearl-detail",
+      "prompt": "Create a NEW premium architectural photograph focused on an INTERIOR WALL coated in pearl-grey and warm ivory Glamourcotes-style mineral decorative coating. Use attached example as guide for clearly visible irregular aggregate relief, but create a new sophisticated interior wall, not a ceiling. Dense tiny grey and ivory mineral flecks with restrained mica sparkle, prominent irregular curled and dragged raised coating texture, unmistakably a decorative textured finish, NOT normal smooth paint or faint roller texture, not smooth Venetian plaster or marble. Close architectural view: pearl-grey textured wall fills 85% of image, narrow adjoining ivory textured wall at left, a clean white door frame at far right and slim skirting below for scale. Grazing daylight reveals mineral grain and tactile relief clearly at thumbnail size. Luxurious refined finish and realistic workmanship. No furniture, plants, books, art, decor, people or paint cans. Landscape 1536x1024, photorealistic architectural editorial photography, no text or watermark.",
+      "reference": "/Users/staytru/Downloads/Paints/1picture-05.jpg",
+      "original": "assets/source/interior-glamour-pearl-detail-original.png",
+      "outputs": [
+        "public/images/interior-glamour-pearl-detail-800.webp",
+        "public/images/interior-glamour-pearl-detail-1536.webp"
+      ]
+    }
+  ]
+}

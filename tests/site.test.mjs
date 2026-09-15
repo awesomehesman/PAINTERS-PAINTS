@@ -42,7 +42,7 @@ test('four featured images and three or four relevant images per category', () =
   doc.querySelector('[data-filter="Gamazine"]').click(); doc.querySelector('.gallery-open').click();
   assert.equal(doc.querySelector('#next-image').disabled, false);
   doc.querySelector('#next-image').click();
-  assert.match(doc.querySelector('#lightbox-image').src, /gamazine-courtyard-1536/);
+  assert.match(doc.querySelector('#lightbox-image').src, /interior-gamazine-gold-1536/);
 });
 test('zoom limits, reset, image navigation, keyboard, focus and load errors', () => {
   const { dom, doc, dialog, photo } = setup(); initGallery(doc, galleryItems);
