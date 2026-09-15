@@ -1,0 +1,68 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "name": "gamazine-courtyard",
+      "prompt": "Use case: photorealistic-natural. Landscape 1536x1024 finish inspiration for Painters & Paints. A South African residential courtyard, warm cream Gamazine-coated wall is the dominant subject, clearly visible coarse small mineral aggregate and irregular dragged vertical texture, black window frame at right and a small aloe below, oblique close architectural view, wall fills 80 percent of frame. Bright soft daylight. Sharp high resolution, realistic material detail, editorial architectural photography. Single image, no collage, text, logos or watermark.",
+      "original": "assets/source/gamazine-courtyard-original.png",
+      "outputs": [
+        "public/images/gamazine-courtyard-800.webp",
+        "public/images/gamazine-courtyard-1536.webp"
+      ]
+    },
+    {
+      "name": "gamazine-boundary",
+      "prompt": "Use case: photorealistic-natural. Landscape 1536x1024 finish inspiration for Painters & Paints. Exterior boundary wall and entrance of a modern South African home, cool grey Gamazine textured coating with clearly visible grain and dragged aggregate ridges, crisp white coping, charcoal pedestrian gate and one small landscaped bed, wall dominates frame, clear sunny daylight. Sharp high resolution, realistic material detail, editorial architectural photography. Single image, no collage, text, logos or watermark.",
+      "original": "assets/source/gamazine-boundary-original.png",
+      "outputs": [
+        "public/images/gamazine-boundary-800.webp",
+        "public/images/gamazine-boundary-1536.webp"
+      ]
+    },
+    {
+      "name": "glamour-pearl",
+      "prompt": "Use case: photorealistic-natural. Landscape 1536x1024 finish inspiration for Painters & Paints. Close architectural photograph of an interior feature wall in pearl ivory Glamourcote style decorative mineral coating, densely speckled tiny cream grey and silver mineral flakes with subtle mica sparkle, tactile aggregate NOT smooth Venetian plaster, a slim oak console and ceramic vase at lower edge for scale. Wall occupies 85 percent, soft raking daylight. Sharp high resolution, realistic material detail, editorial architectural photography. Single image, no collage, text, logos or watermark.",
+      "original": "assets/source/glamour-pearl-original.png",
+      "outputs": [
+        "public/images/glamour-pearl-800.webp",
+        "public/images/glamour-pearl-1536.webp"
+      ]
+    },
+    {
+      "name": "glamour-charcoal",
+      "prompt": "Use case: photorealistic-natural. Landscape 1536x1024 finish inspiration for Painters & Paints. Architectural interior photograph of a charcoal graphite Glamourcote style feature wall with clearly visible fine granite-like mineral flecks and restrained silver mica highlights, warm wood sideboard and cream chair in bottom quarter, wall dominates composition, tasteful contemporary room with broad daylight revealing the decorative coating. Sharp high resolution, realistic material detail, editorial architectural photography. Single image, no collage, text, logos or watermark.",
+      "original": "assets/source/glamour-charcoal-original.png",
+      "outputs": [
+        "public/images/glamour-charcoal-800.webp",
+        "public/images/glamour-charcoal-1536.webp"
+      ]
+    },
+    {
+      "name": "ceiling-white",
+      "prompt": "Use case: photorealistic-natural. Landscape 1536x1024 finish inspiration for Painters & Paints. Architectural photograph looking UP at a newly painted smooth matte white ceiling, crisp white cornice and upper sage green walls at edges, one small ceiling rose and simple pendant, ceiling occupies 80 percent of image, even daylight clearly shows flawless painted surface, realistic residential room. Sharp high resolution, realistic material detail, editorial architectural photography. Single image, no collage, text, logos or watermark.",
+      "original": "assets/source/ceiling-white-original.png",
+      "outputs": [
+        "public/images/ceiling-white-800.webp",
+        "public/images/ceiling-white-1536.webp"
+      ]
+    },
+    {
+      "name": "ceiling-tray",
+      "prompt": "Use case: photorealistic-natural. Landscape 1536x1024 finish inspiration for Painters & Paints. Architectural photograph looking UP at a contemporary stepped tray ceiling freshly painted ivory white with warm recessed cove lighting and neatly spaced small downlights, ceiling occupies 85 percent of frame with just upper edges of taupe room walls, clean realistic geometric design, daylight and gentle lighting. Sharp high resolution, realistic material detail, editorial architectural photography. Single image, no collage, text, logos or watermark.",
+      "original": "assets/source/ceiling-tray-original.png",
+      "outputs": [
+        "public/images/ceiling-tray-800.webp",
+        "public/images/ceiling-tray-1536.webp"
+      ]
+    },
+    {
+      "name": "ceiling-blue",
+      "prompt": "Use case: photorealistic-natural. Landscape 1536x1024 finish inspiration for Painters & Paints. Architectural photograph looking UP at a smooth pale powder-blue painted ceiling framed by crisp white cornice, white upper walls with top of a tall window visible at edge, simple small pendant, ceiling occupies 80 percent of frame, natural daylight, paint finish is main subject, realistic residential proportions. Sharp high resolution, realistic material detail, editorial architectural photography. Single image, no collage, text, logos or watermark.",
+      "original": "assets/source/ceiling-blue-original.png",
+      "outputs": [
+        "public/images/ceiling-blue-800.webp",
+        "public/images/ceiling-blue-1536.webp"
+      ]
+    }
+  ]
+}

@@ -13,17 +13,18 @@ export function initGallery(doc, items) {
   const reset = doc.querySelector('#reset-zoom');
   const count = doc.querySelector('#gallery-count');
   const pointers = new Map();
-  let visible = [...items], index = 0, opener, state = { scale: 1, x: 0, y: 0 }, gesture = null, requestId = 0;
+  const featured = items.filter(item => item.featured).slice(0, 4);
+  let visible = featured, index = 0, opener, state = { scale: 1, x: 0, y: 0 }, gesture = null, requestId = 0;
   function render() {
     grid.replaceChildren();
     for (const item of visible) {
       const figure = doc.createElement('figure'); figure.className = 'gallery-card';
       const button = doc.createElement('button'); button.type = 'button'; button.className = 'gallery-open'; button.setAttribute('aria-label', `View ${item.title}`);
-      const image = doc.createElement('img'); image.src = `/images/${item.image}-800.webp`; image.alt = item.alt; image.loading = 'lazy'; image.width = 800; image.height = 533;
+      const image = doc.createElement('img'); image.src = `/images/${item.image}-800.webp`; image.alt = item.alt; image.srcset = `/images/${item.image}-800.webp 800w, /images/${item.image}-1536.webp 1536w`; image.sizes = '(max-width: 760px) 100vw, 50vw'; image.loading = 'lazy'; image.width = 800; image.height = 533;
       const icon = doc.createElement('span'); icon.className = 'expand-icon'; icon.setAttribute('aria-hidden', 'true'); icon.textContent = '↗';
       button.append(image, icon); button.addEventListener('click', () => open(item.id, button));
       const caption = doc.createElement('figcaption'); const text = doc.createElement('div'); const title = doc.createElement('h3'); title.textContent = item.title;
-      const credit = doc.createElement('p'); credit.textContent = item.credit; text.append(title, credit);
+      const credit = doc.createElement('p'); credit.textContent = item.credit; const subtitle = doc.createElement('p'); subtitle.className = 'gallery-subtitle'; subtitle.textContent = item.subtitle; text.append(title, subtitle, credit);
       const category = doc.createElement('span'); category.textContent = item.categories[0]; caption.append(text, category);
       figure.append(button, caption); grid.append(figure);
     }
@@ -32,7 +33,7 @@ export function initGallery(doc, items) {
   }
   doc.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
     doc.querySelectorAll('[data-filter]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
-    visible = items.filter(item => button.dataset.filter === 'all' || item.categories.includes(button.dataset.filter));
+    visible = button.dataset.filter === 'all' ? featured : items.filter(item => item.categories.includes(button.dataset.filter));
     render();
   }));
   function apply() {

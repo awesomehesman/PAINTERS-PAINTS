@@ -30,16 +30,19 @@ test('navigation targets exist and business claims are not fabricated', () => {
   assert.doesNotMatch(html, /2,400|4\.9\/5|Licensed &amp; insured|Amanda R\.|\(555\)/);
   assert.ok(validNumber(business.whatsappNumber));
 });
-test('all gallery filters and single-image navigation', () => {
+test('four featured images and three or four relevant images per category', () => {
   const { doc } = setup(); initGallery(doc, galleryItems);
   assert.equal(doc.querySelectorAll('.gallery-card').length, 4);
   for (const filter of doc.querySelectorAll('[data-filter]')) {
-    filter.click(); const expected = galleryItems.filter(x => filter.dataset.filter === 'all' || x.categories.includes(filter.dataset.filter)).length;
+    filter.click(); const expected = filter.dataset.filter === 'all' ? 4 : galleryItems.filter(x => x.categories.includes(filter.dataset.filter)).length;
+    if (filter.dataset.filter !== 'all') assert.ok(expected >= 3 && expected <= 4);
     assert.equal(doc.querySelectorAll('.gallery-card').length, expected);
     assert.equal(doc.querySelectorAll('[data-filter][aria-pressed="true"]').length, 1);
   }
   doc.querySelector('[data-filter="Gamazine"]').click(); doc.querySelector('.gallery-open').click();
-  assert.equal(doc.querySelector('#next-image').disabled, true);
+  assert.equal(doc.querySelector('#next-image').disabled, false);
+  doc.querySelector('#next-image').click();
+  assert.match(doc.querySelector('#lightbox-image').src, /gamazine-courtyard-1536/);
 });
 test('zoom limits, reset, image navigation, keyboard, focus and load errors', () => {
   const { dom, doc, dialog, photo } = setup(); initGallery(doc, galleryItems);
@@ -53,7 +56,7 @@ test('zoom limits, reset, image navigation, keyboard, focus and load errors', ()
   assert.equal(doc.querySelector('#zoom-in').disabled, true);
   key(dom, dialog, 'ArrowRight'); assert.equal(doc.querySelector('#lightbox-title').textContent, galleryItems[1].title);
   assert.equal(doc.querySelector('#zoom-level').textContent, '100%');
-  key(dom, dialog, 'ArrowLeft'); key(dom, dialog, 'ArrowLeft'); assert.equal(doc.querySelector('#lightbox-title').textContent, galleryItems.at(-1).title);
+  key(dom, dialog, 'ArrowLeft'); key(dom, dialog, 'ArrowLeft'); assert.equal(doc.querySelector('#lightbox-title').textContent, galleryItems.filter(item => item.featured).at(-1).title);
   for (let i=0;i<4;i++) key(dom, dialog, '-'); assert.equal(doc.querySelector('#zoom-level').textContent, '100%');
   photo.dispatchEvent(new dom.window.Event('error')); assert.match(doc.querySelector('#image-status').textContent, /could not load/);
   key(dom, dialog, 'Escape'); assert.equal(dialog.open, false); assert.equal(doc.activeElement, opener); assert.equal(doc.body.classList.contains('viewer-open'), false);
