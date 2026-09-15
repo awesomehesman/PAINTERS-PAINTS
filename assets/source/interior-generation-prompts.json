@@ -1,0 +1,23 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "name": "interior-painted-sage",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 1536x1024 website painting-service inspiration photograph. Create a high-end architectural photograph whose clear main subject is freshly painted INTERIOR WALLS, not room furnishings. Empty refined residential room corner with a large muted sage-green matte painted wall and adjoining warm off-white wall, crisp straight paint cut lines along a white ceiling and white skirting, a simple white door frame at far right. Painted wall surfaces fill at least 85% of the frame. Camera straight and near wall, enough perspective to show two planes, only a narrow strip of pale oak floor at bottom. Soft natural side daylight reveals an even, smooth matte paint finish and authentic subtle roller texture. Sophisticated restrained residential palette. NO couches, chairs, books, shelves, plants, artwork, decorative objects or people. No text, logos, watermarks or collage. The image must communicate wall painting craftsmanship immediately at thumbnail size.",
+      "original": "assets/source/interior-painted-sage-original.png",
+      "outputs": [
+        "public/images/interior-painted-sage-800.webp",
+        "public/images/interior-painted-sage-1536.webp"
+      ]
+    },
+    {
+      "name": "interior-painted-clay",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 1536x1024 website painting-service inspiration photograph. Create a high-end editorial architectural detail photo focused on freshly painted INTERIOR WALLS. A wide dusty terracotta/clay accent wall adjoining a soft cream painted wall in an unfurnished bright home, crisp white skirting and neat white trim around a doorway at left edge. Main terracotta painted wall occupies 80% of frame, slight oblique view makes the smooth matt paint and precise edges obvious. Soft raking daylight from outside frame, even pigment coverage, subtle realistic roller finish, no exaggerated plaster or rough decorative coating. Only a thin strip of neutral floor. Premium professional painting craftsmanship. NO furniture, plants, shelves, books, artwork, accessories, people or paint cans. No text, logos, watermark or collage. The subject is the applied wall colour and finish, not interior decoration.",
+      "original": "assets/source/interior-painted-clay-original.png",
+      "outputs": [
+        "public/images/interior-painted-clay-800.webp",
+        "public/images/interior-painted-clay-1536.webp"
+      ]
+    }
+  ]
+}
