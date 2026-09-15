@@ -660,8 +660,17 @@ nav a:hover,
   height: 345px;
   transition: transform 0.45s;
 }
+.gallery-card-reference .gallery-open img {
+  object-fit: contain;
+}
+.gallery-card-reference .gallery-open {
+  background: #ddd7ca;
+}
 .gallery-open:hover img {
   transform: scale(1.04);
+}
+.gallery-card-reference .gallery-open:hover img {
+  transform: none;
 }
 .expand-icon {
   position: absolute;

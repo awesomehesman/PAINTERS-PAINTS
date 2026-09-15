@@ -102,6 +102,6 @@ test('missing-number UI does not fake success; configured contact enables form',
 test('every full-size gallery asset and thumbnail decodes', async () => {
   for (const item of galleryItems) for (const width of [800,1536]) {
     const path = new URL(`../public/images/${item.image}-${width}.webp`, import.meta.url); await access(path);
-    const info = await sharp(await readFile(path)).metadata(); assert.equal(info.width, width); assert.ok(info.height > 400);
+    const info = await sharp(await readFile(path)).metadata(); assert.equal(info.width, Math.min(width, item.nativeWidth || width)); if (item.nativeHeight) assert.equal(info.height, item.nativeHeight); else assert.ok(info.height > 400);
   }
 });

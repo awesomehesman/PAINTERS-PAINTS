@@ -7,9 +7,9 @@ export const galleryItems = [
   illustration('gamazine-boundary', 'A striking first impression', 'Grey texture · Boundary walls', ['Gamazine', 'Exterior'], 'Grey textured boundary wall with white coping and a charcoal entrance gate'),
   illustration('glamour-pearl', 'A touch of pearl', 'Ivory mineral flecks · Soft shimmer', ['Glamourcotes', 'Interior'], 'Pearl ivory decorative wall with fine mineral flecks above a slim oak console'),
   illustration('glamour-charcoal', 'Depth in every detail', 'Graphite flecks · Statement texture', ['Glamourcotes'], 'Charcoal decorative feature wall with silver mineral flecks, a wood sideboard and cream chair'),
-  illustration('ceiling-white', 'A clean finish overhead', 'Matt white · Crisp cornices', ['Ceilings'], 'Upward view of a smooth white painted ceiling with white cornices above sage green walls'),
-  illustration('ceiling-tray', 'Light above, warmth below', 'Ivory paint · Stepped ceiling', ['Ceilings'], 'Upward view of an ivory painted tray ceiling with recessed cove lighting and downlights'),
-  illustration('ceiling-blue', 'Colour beyond the walls', 'Powder blue · White cornices', ['Ceilings'], 'Upward view of a pale blue painted ceiling framed by white cornices and the top of a bright window')
+  ceilingReference('ceiling-textured-gold', 'Texture from wall to ceiling', 'Neutral ceiling · Golden textured surround', 391, 511, 'Decorative textured ceiling above gold textured walls, framed by a stepped border and white cornice'),
+  ceilingReference('ceiling-textured-tray', 'Layers of colour and texture', 'Terracotta & grey · Textured tray ceiling', 516, 387, 'Terracotta and grey textured tray ceiling with contrasting white borders and a raised central panel'),
+  ceilingReference('ceiling-textured-rose', 'A decorative finish overhead', 'Peach & cream · Textured ceiling detail', 495, 400, 'Peach and cream ceiling with prominent decorative coating texture, white trim and an octagonal ceiling rose')
 ];
 
 function illustration(image, title, subtitle, categories, description) {
@@ -17,4 +17,11 @@ function illustration(image, title, subtitle, categories, description) {
     alt: `AI-generated inspiration: ${description}`,
     credit: 'AI-generated inspiration', source: '',
     note: 'Illustration only; confirm the actual finish with a physical sample.' };
+}
+
+function ceilingReference(image, title, subtitle, nativeWidth, nativeHeight, alt) {
+  return { id: image, title, subtitle, categories: ['Ceilings'], image,
+    nativeWidth, nativeHeight, fit: 'contain', alt,
+    credit: 'Supplied reference photograph', source: '',
+    note: 'Gamazine / Glamourcotes ceiling inspiration. Confirm the coating and colour with a physical sample.' };
 }
