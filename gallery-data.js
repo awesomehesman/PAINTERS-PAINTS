@@ -7,9 +7,10 @@ export const galleryItems = [
   illustration('gamazine-boundary', 'A striking first impression', 'Grey texture · Boundary walls', ['Gamazine', 'Exterior'], 'Grey textured boundary wall with white coping and a charcoal entrance gate'),
   illustration('glamour-pearl', 'A touch of pearl', 'Ivory mineral flecks · Soft shimmer', ['Glamourcotes', 'Interior'], 'Pearl ivory decorative wall with fine mineral flecks above a slim oak console'),
   illustration('glamour-charcoal', 'Depth in every detail', 'Graphite flecks · Statement texture', ['Glamourcotes'], 'Charcoal decorative feature wall with silver mineral flecks, a wood sideboard and cream chair'),
-  ceilingReference('ceiling-textured-gold', 'Texture from wall to ceiling', 'Neutral ceiling · Golden textured surround', 391, 511, 'Decorative textured ceiling above gold textured walls, framed by a stepped border and white cornice'),
-  ceilingReference('ceiling-textured-tray', 'Layers of colour and texture', 'Terracotta & grey · Textured tray ceiling', 516, 387, 'Terracotta and grey textured tray ceiling with contrasting white borders and a raised central panel'),
-  ceilingReference('ceiling-textured-rose', 'A decorative finish overhead', 'Peach & cream · Textured ceiling detail', 495, 400, 'Peach and cream ceiling with prominent decorative coating texture, white trim and an octagonal ceiling rose')
+  illustration('ceiling-texture-ivory', 'Warmth in every detail', 'Ivory & gold · Textured ceiling', ['Ceilings'], 'Ivory Gamazine-style textured ceiling with a golden textured perimeter, white cornices and recessed downlights'),
+  illustration('ceiling-texture-terracotta', 'Layers of colour and texture', 'Terracotta & silver · Textured tray ceiling', ['Ceilings'], 'Terracotta and silver-grey decorative textured tray ceiling with crisp white borders and warm cove lighting'),
+  illustration('ceiling-texture-peach', 'A decorative finish overhead', 'Peach & cream · Sculpted ceiling detail', ['Ceilings'], 'Peach and cream textured ceiling with raised irregular coating detail, white mouldings and an octagonal ceiling rose'),
+  illustration('ceiling-texture-pearl', 'A little drama above', 'Pearl & charcoal · Textured ceiling', ['Ceilings'], 'Pearl ivory and charcoal decorative textured ceiling with refined white trim and warm recessed lighting')
 ];
 
 function illustration(image, title, subtitle, categories, description) {
@@ -17,11 +18,4 @@ function illustration(image, title, subtitle, categories, description) {
     alt: `AI-generated inspiration: ${description}`,
     credit: 'AI-generated inspiration', source: '',
     note: 'Illustration only; confirm the actual finish with a physical sample.' };
-}
-
-function ceilingReference(image, title, subtitle, nativeWidth, nativeHeight, alt) {
-  return { id: image, title, subtitle, categories: ['Ceilings'], image,
-    nativeWidth, nativeHeight, fit: 'contain', alt,
-    credit: 'Supplied reference photograph', source: '',
-    note: 'Gamazine / Glamourcotes ceiling inspiration. Confirm the coating and colour with a physical sample.' };
 }

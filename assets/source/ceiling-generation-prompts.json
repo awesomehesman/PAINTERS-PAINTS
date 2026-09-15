@@ -1,0 +1,45 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "name": "ceiling-texture-ivory",
+      "prompt": "Reference image is a material and design guide only, not an edit target. Create a NEW high-end architectural photograph looking upward at a luxurious residential ceiling finished in cream and warm ivory Gamazine-style decorative coating. The broad central ceiling and stepped warm-gold perimeter have very clearly visible coarse irregular dragged and curled mineral aggregate texture, inspired by the reference. Crisp smooth white cornice outlines the textured planes. Restrained recessed downlights and tops of warm neutral walls. Ceiling fills at least 85% of the frame, close enough that texture reads at thumbnail size. Premium realistic craftsmanship, soft daylight raking across the textured surface. Do not make the ceiling smooth, plain, cloudy plaster or marble. No furniture-dominated view. Wide landscape 1536x1024. No text, logos, watermarks or collage.",
+      "reference": "/Users/staytru/Downloads/Paints/3images (17).jpeg",
+      "original": "assets/source/ceiling-texture-ivory-original.png",
+      "outputs": [
+        "public/images/ceiling-texture-ivory-800.webp",
+        "public/images/ceiling-texture-ivory-1536.webp"
+      ]
+    },
+    {
+      "name": "ceiling-texture-terracotta",
+      "prompt": "Reference image is a material and ceiling design guide only, not an edit target. Create a NEW high-end architectural photograph looking upward at an elegant tiered rectangular ceiling inspired by this reference: warm terracotta textured outer plane, contrasting pale silver-grey textured recessed rectangle and raised terracotta central panel, finely proportioned smooth white border trims. All coloured ceiling planes show distinct coarse curled dragged aggregate relief, Gamazine/Glamourcote decorative coating, not smooth paint. Refine proportions and craftsmanship into a premium modern interior; discreet warm cove lighting and small recessed spotlights, no exposed wires or unfinished bulb fittings. Ceiling occupies 90% of landscape frame, minimal upper walls. Strong clear tactile texture readable at thumbnail size, natural soft daylight with subtle grazing illumination. Realistic photography, not CGI. Wide landscape 1536x1024. No text, logo, watermark or collage.",
+      "reference": "/Users/staytru/Downloads/Paints/2images (17).jpeg",
+      "original": "assets/source/ceiling-texture-terracotta-original.png",
+      "outputs": [
+        "public/images/ceiling-texture-terracotta-800.webp",
+        "public/images/ceiling-texture-terracotta-1536.webp"
+      ]
+    },
+    {
+      "name": "ceiling-texture-peach",
+      "prompt": "Reference image is a material and design guide only, not an edit target. Create a NEW high-end close architectural photograph of an ornate textured ceiling seen looking upward at a slight diagonal. Large muted peach inset panel surrounded by warm ivory ceiling, both covered in distinct raised curled irregular aggregate pattern like the Gamazine/Glamourcote decorative coating in the reference. Crisp white delicate border moulding and an elegant white octagonal ceiling rose with a refined small flush brass-and-opal light fitted neatly. No holes or unfinished fittings. Luxury workmanship with premium restrained styling while preserving the very visible rough decorative coating texture, not plain paint, smooth plaster or marble. Ceiling fills entire frame, broad daylight grazing across surface reveals relief. Photorealistic editorial architectural image. Wide landscape 1536x1024. No text, logos, watermarks or collage.",
+      "reference": "/Users/staytru/Downloads/Paints/1picture-05.jpg",
+      "original": "assets/source/ceiling-texture-peach-original.png",
+      "outputs": [
+        "public/images/ceiling-texture-peach-800.webp",
+        "public/images/ceiling-texture-peach-1536.webp"
+      ]
+    },
+    {
+      "name": "ceiling-texture-pearl",
+      "prompt": "Reference image guides the rough decorative coating only. Create a NEW high-end architectural photograph looking UP at a premium contemporary coffered ceiling in pearl ivory with restrained charcoal-grey inset borders. Broad ivory ceiling planes have very clearly visible fine irregular curled and dragged mineral aggregate relief and subtle mica flecks inspired by Gamazine/Glamourcote texture in the reference, definitely not plain paint or smooth plaster. Charcoal bands have matching tactile decorative coating. Beautiful crisp white trim, discreet warm cove lighting and small recessed downlights. Tasteful realistic residential architecture, ceiling fills 90% of landscape composition, just top edges of neutral walls. Texture must read clearly at thumbnail size and remain detailed close up. Grazing daylight, premium editorial architectural photography. Landscape 1536x1024, no text, logos, watermark or collage.",
+      "reference": "/Users/staytru/Downloads/Paints/1picture-05.jpg",
+      "original": "assets/source/ceiling-texture-pearl-original.png",
+      "outputs": [
+        "public/images/ceiling-texture-pearl-800.webp",
+        "public/images/ceiling-texture-pearl-1536.webp"
+      ]
+    }
+  ]
+}
