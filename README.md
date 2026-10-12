@@ -1,3 +1,6 @@
+## Access it online
+You can access the website on: https://painters-paints.vercel.app/ 
+
 # Painters & Paints
 
 A responsive static HTML/CSS/JavaScript website with a filterable inspiration gallery, accessible image dialog, 1–4× zoom, pan/pinch controls and a WhatsApp enquiry form.
