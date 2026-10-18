@@ -1,0 +1,41 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "name": "epoxy-ocean",
+      "prompt": "Ocean-blue metallic epoxy floor with flowing white and dark teal marble-like veins and realistic glossy reflections, a bright elegant interior with pale walls and tall windows, no furniture.",
+      "original": "assets/source/epoxy-ocean-original.png",
+      "outputs": [
+        "public/images/epoxy-ocean-800.webp",
+        "public/images/epoxy-ocean-1536.webp"
+      ]
+    },
+    {
+      "name": "epoxy-copper",
+      "prompt": "Charcoal-black metallic epoxy floor with striking copper-orange flowing veins inspired by lava, pigment within the resin NOT actual glowing lava, a refined modern interior with neutral walls, no furniture.",
+      "original": "assets/source/epoxy-copper-original.png",
+      "outputs": [
+        "public/images/epoxy-copper-800.webp",
+        "public/images/epoxy-copper-1536.webp"
+      ]
+    },
+    {
+      "name": "epoxy-monochrome",
+      "prompt": "Black white and silver metallic epoxy floor with broad organic swirling ribbons and refined glossy finish, a contemporary garage showroom with clean light walls, no cars, furniture or clutter.",
+      "original": "assets/source/epoxy-monochrome-original.png",
+      "outputs": [
+        "public/images/epoxy-monochrome-800.webp",
+        "public/images/epoxy-monochrome-1536.webp"
+      ]
+    },
+    {
+      "name": "epoxy-marble",
+      "prompt": "Pearl-white epoxy floor with elegant fine charcoal marble-effect veins and subtle golden accents, refined hallway with white walls and dark door trims, no furniture.",
+      "original": "assets/source/epoxy-marble-original.png",
+      "outputs": [
+        "public/images/epoxy-marble-800.webp",
+        "public/images/epoxy-marble-1536.webp"
+      ]
+    }
+  ]
+}

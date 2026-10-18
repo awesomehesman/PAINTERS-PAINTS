@@ -1295,3 +1295,18 @@ dialog button:disabled {
     font-size: 36px;
   }
 }
+
+/* Epoxy flooring service */
+.epoxy-service { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; margin-top: 60px; background: #eaece3; }
+.epoxy-service > img { width: 100%; height: 100%; min-height: 410px; object-fit: cover; }
+.epoxy-copy { padding: 40px; }
+.epoxy-copy h3 { font: 36px/1.15 var(--serif); margin: 18px 0; }
+.epoxy-copy > p:not(.eyebrow) { color: var(--muted); font-size: 13px; line-height: 1.8; margin: 16px 0; }
+.epoxy-copy .button { margin-top: 12px; }
+.service-ribbon > .container { flex-wrap: wrap; gap: 14px; justify-content: center; }
+@media (max-width: 760px) {
+  .epoxy-service { grid-template-columns: 1fr; }
+  .epoxy-service > img { min-height: 0; height: auto; aspect-ratio: 3 / 2; }
+  .epoxy-copy { padding: 28px 24px; }
+  .epoxy-copy h3 { font-size: 30px; }
+}

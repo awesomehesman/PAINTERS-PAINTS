@@ -1,4 +1,4 @@
-export const services = ['Gamazine', 'Glamourcotes', 'Interior painting', 'Exterior & boundary walls', 'Ceiling finishes', 'Multiple services / advice'];
+export const services = ['Gamazine', 'Glamourcotes', 'Interior painting', 'Exterior & boundary walls', 'Ceiling finishes', 'Epoxy floors', 'Multiple services / advice'];
 export function validNumber(number) { return /^[1-9]\d{7,14}$/.test(number); }
 export function whatsappLink(number, data) {
   if (!validNumber(number)) return null;

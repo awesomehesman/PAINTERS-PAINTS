@@ -105,3 +105,16 @@ test('every full-size gallery asset and thumbnail decodes', async () => {
     const info = await sharp(await readFile(path)).metadata(); assert.equal(info.width, width); assert.ok(info.height > 400);
   }
 });
+
+test('epoxy gallery, quote selection and customer-facing imagery labels', () => {
+  const { doc } = setup(); initGallery(doc, galleryItems); initQuote(doc, business);
+  doc.querySelector('[data-filter="Epoxy floors"]').click();
+  assert.equal(doc.querySelectorAll('.gallery-card').length, 4);
+  doc.querySelector('[data-service="Epoxy floors"]').click();
+  assert.equal(doc.querySelector('select').value, 'Epoxy floors');
+  const link = whatsappLink(business.whatsappNumber, {name: 'Sam', location: 'Durban', service: 'Epoxy floors', description: 'Metallic blue floor'});
+  assert.match(new URL(link).searchParams.get('text'), /Service: Epoxy floors/);
+  doc.querySelector('.gallery-open').click();
+  assert.doesNotMatch(doc.body.textContent, /AI-generated inspiration/i);
+  assert.doesNotMatch(doc.querySelector('#lightbox-credit').textContent, /^ —/);
+});

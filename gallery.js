@@ -24,7 +24,7 @@ export function initGallery(doc, items) {
       const icon = doc.createElement('span'); icon.className = 'expand-icon'; icon.setAttribute('aria-hidden', 'true'); icon.textContent = '↗';
       button.append(image, icon); button.addEventListener('click', () => open(item.id, button));
       const caption = doc.createElement('figcaption'); const text = doc.createElement('div'); const title = doc.createElement('h3'); title.textContent = item.title;
-      const credit = doc.createElement('p'); credit.textContent = item.credit; const subtitle = doc.createElement('p'); subtitle.className = 'gallery-subtitle'; subtitle.textContent = item.subtitle; text.append(title, subtitle, credit);
+      const credit = doc.createElement('p'); credit.textContent = item.credit; const subtitle = doc.createElement('p'); subtitle.className = 'gallery-subtitle'; subtitle.textContent = item.subtitle; text.append(title, subtitle); if (item.credit) text.append(credit);
       const category = doc.createElement('span'); category.textContent = item.categories[0]; caption.append(text, category);
       figure.append(button, caption); grid.append(figure);
     }
@@ -59,7 +59,8 @@ export function initGallery(doc, items) {
     const credit = doc.querySelector('#lightbox-credit'); credit.replaceChildren();
     const creditText = doc.createElement(item.source ? 'a' : 'span'); creditText.textContent = item.credit;
     if (item.source) { creditText.href = item.source; creditText.target = '_blank'; creditText.rel = 'noopener noreferrer'; }
-    credit.append(creditText, doc.createTextNode(` — ${item.note}`));
+    if (item.credit) credit.append(creditText, doc.createTextNode(' — '));
+    credit.append(doc.createTextNode(item.note));
     imageStatus.textContent = 'Loading image…';
     photo.onload = () => { if (request !== requestId) return; photo.style.visibility = 'visible'; imageStatus.textContent = ''; apply(); };
     photo.onerror = () => { if (request !== requestId) return; photo.style.visibility = 'hidden'; imageStatus.textContent = 'This image could not load. Please try another image or reopen the viewer.'; };

@@ -1,6 +1,6 @@
 export const galleryItems = [
-  { featured: true, id: 'warm-exterior', title: 'Texture meets architecture', subtitle: 'Warm ivory · Charcoal accents', categories: ['Gamazine', 'Exterior'], image: 'gamazine', alt: 'AI-generated contemporary home with ivory textured walls, charcoal trim and indigenous planting', credit: 'AI-generated inspiration', source: '', note: 'Illustration only; confirm the actual finish with a physical sample.' },
-  { featured: true, id: 'warm-interior', title: 'A softer side of texture', subtitle: 'Sand tones · Decorative walls', categories: ['Glamourcotes', 'Interior'], image: 'glamour', alt: 'AI-generated living room with a sand-coloured textured feature wall, ivory sofa and stepped white ceiling', credit: 'AI-generated inspiration', source: '', note: 'Illustration only; confirm the actual finish with a physical sample.' },
+  { featured: true, id: 'warm-exterior', title: 'Texture meets architecture', subtitle: 'Warm ivory · Charcoal accents', categories: ['Gamazine', 'Exterior'], image: 'gamazine', alt: 'Contemporary home with ivory textured walls, charcoal trim and indigenous planting', credit: '', source: '', note: 'Design reference; confirm the final colour and finish with a physical sample.' },
+  { featured: true, id: 'warm-interior', title: 'A softer side of texture', subtitle: 'Sand tones · Decorative walls', categories: ['Glamourcotes', 'Interior'], image: 'glamour', alt: 'Living room with a sand-coloured textured feature wall, ivory sofa and stepped white ceiling', credit: '', source: '', note: 'Design reference; confirm the final colour and finish with a physical sample.' },
   { featured: true, ...illustration('interior-gamazine-gold', 'Room to feel at home', 'Warm gold · Gamazine texture', ['Interior', 'Gamazine'], 'Warm gold Gamazine-style interior wall with pronounced dragged mineral aggregate ridges, an ivory textured corner and crisp white skirting') },
   { featured: true, ...illustration('interior-glamour-pearl-detail', 'A fresh perspective', 'Pearl grey · Glamourcotes texture', ['Interior', 'Glamourcotes'], 'Pearl grey Glamourcotes-style interior wall with visible raised mineral flecks and irregular relief beside an ivory textured wall') },
   illustration('gamazine-courtyard', 'Texture in the sunshine', 'Cream aggregate · Courtyard walls', ['Gamazine', 'Exterior'], 'Cream Gamazine-inspired courtyard wall with visible coarse aggregate, a dark window frame and aloe planting'),
@@ -10,12 +10,16 @@ export const galleryItems = [
   illustration('ceiling-texture-ivory', 'Warmth in every detail', 'Ivory & gold · Textured ceiling', ['Ceilings'], 'Ivory Gamazine-style textured ceiling with a golden textured perimeter, white cornices and recessed downlights'),
   illustration('ceiling-texture-terracotta', 'Layers of colour and texture', 'Terracotta & silver · Textured tray ceiling', ['Ceilings'], 'Terracotta and silver-grey decorative textured tray ceiling with crisp white borders and warm cove lighting'),
   illustration('ceiling-texture-peach', 'A decorative finish overhead', 'Peach & cream · Sculpted ceiling detail', ['Ceilings'], 'Peach and cream textured ceiling with raised irregular coating detail, white mouldings and an octagonal ceiling rose'),
-  illustration('ceiling-texture-pearl', 'A little drama above', 'Pearl & charcoal · Textured ceiling', ['Ceilings'], 'Pearl ivory and charcoal decorative textured ceiling with refined white trim and warm recessed lighting')
+  illustration('ceiling-texture-pearl', 'A little drama above', 'Pearl & charcoal · Textured ceiling', ['Ceilings'], 'Pearl ivory and charcoal decorative textured ceiling with refined white trim and warm recessed lighting'),
+  illustration('epoxy-ocean', 'An ocean underfoot', 'Ocean blue · Flowing metallic veins', ['Epoxy floors'], 'Glossy ocean-blue epoxy floor with flowing white and teal veins in a bright interior'),
+  illustration('epoxy-copper', 'A bolder kind of floor', 'Charcoal & copper · Metallic epoxy', ['Epoxy floors'], 'Charcoal epoxy floor with copper-orange metallic veins and reflective resin finish'),
+  illustration('epoxy-monochrome', 'Movement in monochrome', 'Black & silver · Swirled resin', ['Epoxy floors'], 'Black white and silver epoxy floor with broad flowing swirls in a clean garage showroom'),
+  illustration('epoxy-marble', 'A polished first impression', 'Pearl white · Marble-effect epoxy', ['Epoxy floors'], 'Pearl-white epoxy hallway floor with charcoal and gold marble-effect veins')
 ];
 
 function illustration(image, title, subtitle, categories, description) {
   return { id: image, title, subtitle, categories, image,
-    alt: `AI-generated inspiration: ${description}`,
-    credit: 'AI-generated inspiration', source: '',
-    note: 'Illustration only; confirm the actual finish with a physical sample.' };
+    alt: description,
+    credit: '', source: '',
+    note: 'Design reference; confirm the final colour and finish with a physical sample.' };
 }
