@@ -21,7 +21,7 @@ export function initGallery(doc, items, options = {}) {
       const figure = doc.createElement('figure'); figure.className = 'gallery-card';
       const button = doc.createElement('button'); button.type = 'button'; button.className = 'gallery-open'; button.setAttribute('aria-label', `View ${item.title}`);
       const image = doc.createElement('img'); image.src = item.thumbnail || `/images/${item.image}-800.webp`; image.alt = item.alt; if (!item.thumbnail) image.srcset = `/images/${item.image}-800.webp 800w, /images/${item.image}-1536.webp 1536w`; image.sizes = '(max-width: 760px) 100vw, 50vw'; image.loading = 'lazy'; image.width = item.width || 800; image.height = item.height || 533;
-      const icon = doc.createElement('span'); icon.className = 'expand-icon'; icon.setAttribute('aria-hidden', 'true'); icon.textContent = '↗';
+      const icon = doc.createElement('span'); icon.className = 'expand-icon'; icon.setAttribute('aria-hidden', 'true'); icon.innerHTML = '<svg class="ui-icon ui-icon-diagonal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" focusable="false"><path d="M2 22 22 2M16 2h6v6"/></svg>';
       button.append(image, icon); button.addEventListener('click', () => open(item.id, button));
       const caption = doc.createElement('figcaption'); const text = doc.createElement('div'); const title = doc.createElement('h3'); title.textContent = item.title;
       const credit = doc.createElement('p'); credit.textContent = item.credit; const subtitle = doc.createElement('p'); subtitle.className = 'gallery-subtitle'; subtitle.textContent = item.subtitle; text.append(title, subtitle); if (item.credit) text.append(credit);

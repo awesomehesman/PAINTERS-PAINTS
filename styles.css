@@ -1329,3 +1329,14 @@ dialog button:disabled {
 .work-invite h2 { margin-bottom: 20px; }
 @media (max-width: 1000px) { .work-page .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .work-heading { padding-top: 45px; } .work-invite { grid-template-columns: 1fr; gap: 28px; } .work-page .gallery-grid { grid-template-columns: 1fr; } .work-page .gallery-open img { height: auto; max-height: 520px; object-fit: contain; background: #eae6dd; } }
+
+/* Vector icons keep the same shape on desktop and mobile, without emoji substitution. */
+.ui-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+}
+.nav-toggle { color: var(--ink, #292e27); }
+.expand-icon { color: var(--ink, #292e27); }
