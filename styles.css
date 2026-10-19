@@ -1310,3 +1310,22 @@ dialog button:disabled {
   .epoxy-copy { padding: 28px 24px; }
   .epoxy-copy h3 { font-size: 30px; }
 }
+
+/* Real project photography */
+.work-heading { padding-top: 80px; padding-bottom: 50px; }
+.work-heading h1 { margin-bottom: 24px; }
+.work-heading .section-intro { max-width: 640px; }
+.work-gallery { padding-bottom: 55px; }
+.work-page .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.work-page .gallery-open img { height: 360px; object-fit: cover; }
+.work-page .gallery-card figcaption { flex-direction: column; gap: 12px; }
+.work-page .gallery-card figcaption > span { align-self: flex-start; }
+.work-page [aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+.work-cta { padding: 55px 0 70px; border-top: 1px solid #d9d4c9; }
+.work-cta p { margin: 20px 0; }
+.work-invite { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding-top: 70px; }
+.work-invite img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.work-invite p { margin-bottom: 24px; }
+.work-invite h2 { margin-bottom: 20px; }
+@media (max-width: 1000px) { .work-page .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .work-heading { padding-top: 45px; } .work-invite { grid-template-columns: 1fr; gap: 28px; } .work-page .gallery-grid { grid-template-columns: 1fr; } .work-page .gallery-open img { height: auto; max-height: 520px; object-fit: contain; background: #eae6dd; } }

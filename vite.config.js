@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
     server: { watch: { useFsEvents: false, usePolling: true } },
     build: {
       outDir: 'dist/client',
-      rolldownOptions: { input: { main: 'index.html', credits: 'image-credits.html' } }
+      rolldownOptions: { input: { main: 'index.html', credits: 'image-credits.html', work: 'our-work.html' } }
     }
   };
 });

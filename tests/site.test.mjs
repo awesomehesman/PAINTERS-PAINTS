@@ -118,3 +118,29 @@ test('epoxy gallery, quote selection and customer-facing imagery labels', () => 
   assert.doesNotMatch(doc.body.textContent, /AI-generated inspiration/i);
   assert.doesNotMatch(doc.querySelector('#lightbox-credit').textContent, /^ —/);
 });
+
+test('our work shows all real photos, filters and opens original proportions', async () => {
+  const { workItems } = await import('../work-data.js');
+  const workHtml = await readFile(new URL('../our-work.html', import.meta.url), 'utf8');
+  const dom = new JSDOM(workHtml, { url: 'https://example.test/our-work.html' });
+  const doc = dom.window.document;
+  doc.querySelector('dialog').showModal = () => {};
+  initGallery(doc, workItems, { showAll: true, label: 'OUR WORK' });
+  assert.equal(doc.querySelectorAll('.gallery-card').length, 16);
+  for (const filter of doc.querySelectorAll('[data-filter]')) {
+    filter.click();
+    const selected = filter.dataset.filter === 'all' ? workItems : workItems.filter(item => item.categories.includes(filter.dataset.filter));
+    assert.equal(doc.querySelectorAll('.gallery-card').length, selected.length);
+    doc.querySelector('.gallery-open').click();
+    assert.ok(doc.querySelector('#lightbox-image').src.endsWith(selected[0].full));
+    assert.match(doc.querySelector('#lightbox-position').textContent, /OUR WORK/);
+  }
+  for (const item of workItems) {
+    for (const path of [item.thumbnail, item.full]) {
+      const meta = await sharp(new URL('../public' + path, import.meta.url).pathname).metadata();
+      assert.ok(meta.width > 0 && meta.height > 0);
+      if (path === item.thumbnail) { assert.equal(meta.width, item.width); assert.equal(meta.height, item.height); }
+    }
+  }
+  assert.match(html, /href="\/our-work.html"/);
+});

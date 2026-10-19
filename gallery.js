@@ -1,5 +1,5 @@
 import { clamp, boundPan, zoomAt } from './viewer-math.js';
-export function initGallery(doc, items) {
+export function initGallery(doc, items, options = {}) {
   const grid = doc.querySelector('#gallery');
   const dialog = doc.querySelector('#lightbox');
   const stage = doc.querySelector('#image-stage');
@@ -13,14 +13,14 @@ export function initGallery(doc, items) {
   const reset = doc.querySelector('#reset-zoom');
   const count = doc.querySelector('#gallery-count');
   const pointers = new Map();
-  const featured = items.filter(item => item.featured).slice(0, 4);
+  const featured = options.showAll ? items : items.filter(item => item.featured).slice(0, 4);
   let visible = featured, index = 0, opener, state = { scale: 1, x: 0, y: 0 }, gesture = null, requestId = 0;
   function render() {
     grid.replaceChildren();
     for (const item of visible) {
       const figure = doc.createElement('figure'); figure.className = 'gallery-card';
       const button = doc.createElement('button'); button.type = 'button'; button.className = 'gallery-open'; button.setAttribute('aria-label', `View ${item.title}`);
-      const image = doc.createElement('img'); image.src = `/images/${item.image}-800.webp`; image.alt = item.alt; image.srcset = `/images/${item.image}-800.webp 800w, /images/${item.image}-1536.webp 1536w`; image.sizes = '(max-width: 760px) 100vw, 50vw'; image.loading = 'lazy'; image.width = 800; image.height = 533;
+      const image = doc.createElement('img'); image.src = item.thumbnail || `/images/${item.image}-800.webp`; image.alt = item.alt; if (!item.thumbnail) image.srcset = `/images/${item.image}-800.webp 800w, /images/${item.image}-1536.webp 1536w`; image.sizes = '(max-width: 760px) 100vw, 50vw'; image.loading = 'lazy'; image.width = item.width || 800; image.height = item.height || 533;
       const icon = doc.createElement('span'); icon.className = 'expand-icon'; icon.setAttribute('aria-hidden', 'true'); icon.textContent = '↗';
       button.append(image, icon); button.addEventListener('click', () => open(item.id, button));
       const caption = doc.createElement('figcaption'); const text = doc.createElement('div'); const title = doc.createElement('h3'); title.textContent = item.title;
@@ -55,7 +55,7 @@ export function initGallery(doc, items) {
     photo.style.visibility = 'hidden';
     photo.alt = item.alt;
     doc.querySelector('#lightbox-title').textContent = item.title;
-    doc.querySelector('#lightbox-position').textContent = `${index + 1} / ${visible.length} · FINISH INSPIRATION`;
+    doc.querySelector('#lightbox-position').textContent = `${index + 1} / ${visible.length} · ${options.label || "FINISH INSPIRATION"}`;
     const credit = doc.querySelector('#lightbox-credit'); credit.replaceChildren();
     const creditText = doc.createElement(item.source ? 'a' : 'span'); creditText.textContent = item.credit;
     if (item.source) { creditText.href = item.source; creditText.target = '_blank'; creditText.rel = 'noopener noreferrer'; }
@@ -64,7 +64,7 @@ export function initGallery(doc, items) {
     imageStatus.textContent = 'Loading image…';
     photo.onload = () => { if (request !== requestId) return; photo.style.visibility = 'visible'; imageStatus.textContent = ''; apply(); };
     photo.onerror = () => { if (request !== requestId) return; photo.style.visibility = 'hidden'; imageStatus.textContent = 'This image could not load. Please try another image or reopen the viewer.'; };
-    photo.src = `/images/${item.image}-1536.webp`;
+    photo.src = item.full || `/images/${item.image}-1536.webp`;
     prev.disabled = next.disabled = visible.length < 2;
   }
   function open(id, button) {
