@@ -485,9 +485,6 @@ nav a:hover,
   .service-ribbon i {
     font-size: 13px;
   }
-  .service-ribbon i:last-of-type {
-    display: none;
-  }
   .section {
     padding-block: 60px;
   }
