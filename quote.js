@@ -22,7 +22,8 @@ export function initQuote(doc, business) {
     status.textContent = 'Your message opens in WhatsApp for you to review and send.';
     contact.textContent = `+${business.whatsappNumber}`;
     direct.hidden = false;
-    direct.href = `https://wa.me/${business.whatsappNumber}`;
+    const greeting = "Hello Painters & Paints! I'd like to discuss a project and find out more about your painting and decorative finishes. Could you help me with advice and a quote?";
+    direct.href = `https://wa.me/${business.whatsappNumber}?text=${encodeURIComponent(greeting)}`;
   }
   form.addEventListener('submit', event => {
     event.preventDefault();

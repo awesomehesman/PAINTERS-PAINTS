@@ -94,7 +94,9 @@ test('missing-number UI does not fake success; configured contact enables form',
   assert.equal(doc.querySelector('#direct-whatsapp').hidden, true);
   const enabled = setup(); initQuote(enabled.doc, { ...business, serviceArea: 'Cape Town' });
   assert.equal(enabled.doc.querySelector('#quote-form button').disabled, false);
-  assert.equal(enabled.doc.querySelector('#direct-whatsapp').href, 'https://wa.me/27794701191');
+  const directUrl = new URL(enabled.doc.querySelector('#direct-whatsapp').href);
+  assert.equal(directUrl.origin + directUrl.pathname, 'https://wa.me/27794701191');
+  assert.equal(directUrl.searchParams.get('text'), "Hello Painters & Paints! I'd like to discuss a project and find out more about your painting and decorative finishes. Could you help me with advice and a quote?");
   assert.match(enabled.doc.querySelector('#service-area').textContent, /Cape Town/);
   enabled.doc.querySelector('[data-service="Gamazine"]').click(); assert.equal(enabled.doc.querySelector('select').value, 'Gamazine');
   assert.equal(enabled.doc.querySelector('#quote-form').checkValidity(), false);
